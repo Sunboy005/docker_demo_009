@@ -1,4 +1,4 @@
-name: docker_demo_009_CICD
+name: docker_demo_009_CICD_Heroku
 
 on:
   push:
