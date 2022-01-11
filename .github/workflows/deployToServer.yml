@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Check out code
-      working-directory: ./DockerDemo009/
+      working-directory: DockerDemo009/
       env: 
         HEROKU_SECRET: ${{ secrets.HEROKU_SECRET }}
         APP_NAME: ${{ 'dockerdemo009' }}
