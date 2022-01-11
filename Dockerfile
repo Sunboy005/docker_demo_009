@@ -10,6 +10,6 @@ RUN dotnet publish -c Release -o publish
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "DockerDemo009.dll"]
+#ENTRYPOINT ["dotnet", "DockerDemo009.dll"]
 
-#CMD ASPNETCORE_URLS=http://*:$PORT dotnet UserRoleMgtApi.Core.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet UserRoleMgtApi.Core.dll
