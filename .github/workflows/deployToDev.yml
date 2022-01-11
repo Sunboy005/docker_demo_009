@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Restore dependencies
-      working-directory: ./
+      working-directory: ./DockerDemo009.Test
       run: dotnet restore
     - name: Build
-      working-directory: ./
+      working-directory: ./DockerDemo009.Test
       run: dotnet build --no-restore
     - name: Test
-      working-directory: ./
+      working-directory: ./DockerDemo009.Test
       run: dotnet test --no-build --verbosity normal
