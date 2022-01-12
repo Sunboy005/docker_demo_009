@@ -13,6 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup for develop branch
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
     - name: Restore dependencies
       working-directory: ./DockerDemo009.Test
       run: dotnet restore
