@@ -2,9 +2,9 @@ name: docker_demo_009_CICD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build_develop:
@@ -13,9 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup for develop branch
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
     - name: Restore dependencies
+      working-directory: ./DockerDemo009.Test
       run: dotnet restore
     - name: Build
+      working-directory: ./DockerDemo009.Test
       run: dotnet build --no-restore
     - name: Test
+      working-directory: ./DockerDemo009.Test
       run: dotnet test --no-build --verbosity normal
